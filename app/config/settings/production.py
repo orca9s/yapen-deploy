@@ -1,9 +1,7 @@
 from .base import *
 
 DEBUG = False
-ALLOWED_HOSTS = [
-    'localhost',
-]
+ALLOWED_HOSTS = secrets['ALLOWED_HOSTS']
 
 WSGI_APPLICATION = 'config.wsgi.production.application'
 
