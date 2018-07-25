@@ -19,5 +19,6 @@ RUN             cp -f   /srv/project/.config/${BUILD_MODE}/nginx.conf \
 RUN             cp -f   /srv/project/.config/${BUILD_MODE}/supervisor.conf \
                         /etc/supervisor/conf.d/
 
+
 # supervisord 실행
-CMD             superv isord -n
+CMD             supervisord -n
