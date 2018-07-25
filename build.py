@@ -13,7 +13,7 @@ def get_mode():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '-m', '--mode',
-        help='Docker build mode [MODES]',
+        help='Docker build mode [{}]'.format(', '.join(MODES)),
     )
     args = parser.parse_args()
 
@@ -23,8 +23,9 @@ def get_mode():
     # 사용자 입력으로 mode를 선택한 경우
     else:
         while True:
-            for num, text in enumerate(MODES, start=1):
-                print(f'{num}: {text}')
+            print('Select mode')
+            for index, mode_name in enumerate(MODES, start=1):
+                print(f'{index}: {mode_name}')
             selected_mode = input('Choice:')
             try:
                 mode_index = int(selected_mode) - 1

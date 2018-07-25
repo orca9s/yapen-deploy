@@ -1,7 +1,0 @@
--i https://pypi.org/simple
-django-extensions==2.1.0
-django==2.0.7
-pytz==2018.5
-shell==1.0.1
-six==1.11.0
-uwsgi==2.0.17.1

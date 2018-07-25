@@ -17,6 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRETS_DIR = os.path.join(ROOT_DIR, '.secrets')
 secrets = json.load(open(os.path.join(SECRETS_DIR, 'base.json')))
+SECRET_KEY = secrets['SECRET_KEY']
 
 # Static
 STATIC_URL = '/static/'
@@ -103,4 +104,3 @@ TIME_ZONE = 'Asia/Seoul'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-SECRET_KEY = secrets['SECRET_KEY']

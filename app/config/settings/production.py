@@ -1,9 +1,8 @@
 from .base import *
 
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = [
 	'localhost',
-	'.elasticbeanstalk.com'
 ]
 
 WSGI_APPLICATION = 'config.wsgi.production.application'
