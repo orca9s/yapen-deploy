@@ -2,26 +2,21 @@ from .base import *
 
 DEBUG = False
 ALLOWED_HOSTS = [
-	'localhost',
+    'localhost',
 ]
 
 WSGI_APPLICATION = 'config.wsgi.production.application'
 
-
 DATABASES = {
-	'default': {
-		'ENGINE': 'django.db.backends.sqlite3',
-		'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-	}
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 STATIC_URL = '/static/'
 
 LOG_DIR = '/var/log/django'
-if not os.path.exists(LOG_DIR):
-    LOG_DIR = os.path.join(ROOT_DIR, '.log')
-    os.makedirs(LOG_DIR, exist_ok=True)
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -58,6 +53,6 @@ LOGGING = {
             'handlers': ['console', 'file_error'],
             'level': 'INFO',
             'propagate': True,
-        },
+        }
     }
 }
