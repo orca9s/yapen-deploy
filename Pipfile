@@ -6,9 +6,12 @@ name = "pypi"
 [packages]
 shell = "*"
 django = "*"
+django-extensions = "*"
+uwsgi = "*"
 
 [dev-packages]
 awsebcli = "*"
+django-extensions = "*"
 
 [requires]
 python_version = "3.6"

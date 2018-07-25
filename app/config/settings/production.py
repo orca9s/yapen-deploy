@@ -7,6 +7,7 @@ ALLOWED_HOST = [
 
 WSGI_APPLICATION = 'config.wsgi.production.application'
 
+
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.sqlite3',

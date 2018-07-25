@@ -1,10 +1,8 @@
 #!/usr/bin/env python
-import sys
-
+import argparse
 import os
 import subprocess
-import argparse
-
+import sys
 
 MODES = ['base', 'local', 'dev', 'production']
 
@@ -56,7 +54,7 @@ def build_base():
         # pipenv lock으로 requirements.txt생성
         subprocess.call('pipenv lock --requirements > requirements.txt', shell=True)
         # docker build
-        subprocess.call('docker build -t eb-docker:base -f Dockerfile.base .', shell=True)
+        subprocess.call('docker build -t yapen-docker:base -f Dockerfile.base .', shell=True)
     finally:
         # 끝난 후 requirements.txt파일 삭제
         os.remove('requirements.txt')
@@ -67,7 +65,7 @@ def build_local():
         # pipenv lock으로 requirements.txt생성
         subprocess.call('pipenv lock --requirements > requirements.txt', shell=True)
         # docker build
-        subprocess.call('docker build -t eb-docker:local -f Dockerfile.local .', shell=True)
+        subprocess.call('docker build -t yapen-docker:local -f Dockerfile.local .', shell=True)
     finally:
         # 끝난 후 requirements.txt파일 삭제
         os.remove('requirements.txt')
@@ -78,7 +76,7 @@ def build_dev():
         # pipenv lock으로 requirements.txt생성
         subprocess.call('pipenv lock --requirements --dev > requirements.txt', shell=True)
         # docker build
-        subprocess.call('docker build -t eb-docker:dev -f Dockerfile.dev .', shell=True)
+        subprocess.call('docker build -t yapen-docker:dev -f Dockerfile.dev .', shell=True)
     finally:
         # 끝난 후 requirements.txt파일 삭제
         os.remove('requirements.txt')
@@ -89,7 +87,7 @@ def build_production():
         # pipenv lock으로 requirements.txt생성
         subprocess.call('pipenv lock --requirements > requirements.txt', shell=True)
         # docker build
-        subprocess.call('docker build -t eb-docker:production -f Dockerfile.production .', shell=True)
+        subprocess.call('docker build -t yapen-docker:production -f Dockerfile.production .', shell=True)
     finally:
         # 끝난 후 requirements.txt파일 삭제
         os.remove('requirements.txt')
@@ -99,4 +97,3 @@ if __name__ == '__main__':
     mode = get_mode()
     # 선택된 mode에 해당하는 함수를 실행
     mode_function(mode)
-

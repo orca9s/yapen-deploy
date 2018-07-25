@@ -5,6 +5,7 @@ ALLOWED_HOST = []
 
 WSGI_APPLICATION = 'config.wsgi.dev.application'
 
+
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.sqlite3',
