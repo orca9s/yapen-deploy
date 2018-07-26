@@ -7,6 +7,7 @@ ALLOWED_HOSTS = [
 
 WSGI_APPLICATION = 'config.wsgi.local.application'
 
+# DB
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -14,8 +15,11 @@ DATABASES = {
     }
 }
 
-STATIC_URL = '/static/'
 
+# media
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(ROOT_DIR, '.media')
+# log
 LOG_DIR = os.path.join(ROOT_DIR, '.log')
 LOGGING = {
     'version': 1,
