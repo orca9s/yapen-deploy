@@ -22,6 +22,8 @@ secrets = json.load(open(os.path.join(SECRETS_DIR, 'base.json')))
 # Static
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(ROOT_DIR, '.static')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(ROOT_DIR, '.media')
 
 # AWS
 AWS_ACCESS_KEY_ID = secrets['AWS_ACCESS_KEY_ID']
@@ -39,8 +41,6 @@ AUTHENTICATION_BACKENDS = [
     # 'members.backends.SettingsBackend',
 ]
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(ROOT_DIR, '.media')
 
 INSTALLED_APPS = [
     'members',

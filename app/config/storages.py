@@ -7,3 +7,5 @@ __all__ = (
 
 class S3DefaultStorage(S3Boto3Storage):
 	location = 'media'
+
+
