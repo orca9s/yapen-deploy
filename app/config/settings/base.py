@@ -17,18 +17,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRETS_DIR = os.path.join(ROOT_DIR, '.secrets')
 secrets = json.load(open(os.path.join(SECRETS_DIR, 'base.json')))
-SECRET_KEY = secrets['SECRET_KEY']
+
 
 # Static
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(ROOT_DIR, '.static')
 
-# AWS
-AWS_ACCESS_KEY_ID = secrets['AWS_ACCESS_KEY_ID']
-AWS_SECRET_ACCESS_KEY = secrets['AWS_SECRET_ACCESS_KEY']
-AWS_DEFAULT_ACL = secrets['AWS_DEFAULT_ACL']
-AWS_S3_REGION_NAME = secrets['AWS_S3_REGION_NAME']
-AWS_S3_SIGNATURE_VERSION = secrets['AWS_S3_SIGNATURE_VERSION']
+# # AWS
+# AWS_ACCESS_KEY_ID = secrets['AWS_ACCESS_KEY_ID']
+# AWS_SECRET_ACCESS_KEY = secrets['AWS_SECRET_ACCESS_KEY']
+# AWS_DEFAULT_ACL = secrets['AWS_DEFAULT_ACL']
+# AWS_S3_REGION_NAME = secrets['AWS_S3_REGION_NAME']
+# AWS_S3_SIGNATURE_VERSION = secrets['AWS_S3_SIGNATURE_VERSION']
 
 # Auth
 ADMIN_USERNAME = 'admin'
@@ -36,7 +36,7 @@ ADMIN_PASSWORD = 'pbkdf2_sha256$100000$bjl8bQRGI9Nm$zPBYIWVpI26QVKukz5awS1xNAtCE
 AUTH_USER_MODEL = 'members.User'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'members.backends.SettingsBackend',
+    # 'members.backends.SettingsBackend',
 ]
 
 MEDIA_URL = '/media/'
@@ -104,3 +104,4 @@ TIME_ZONE = 'Asia/Seoul'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+SECRET_KEY = secrets['SECRET_KEY']
