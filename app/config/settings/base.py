@@ -33,12 +33,12 @@ AWS_S3_REGION_NAME = secrets['AWS_S3_REGION_NAME']
 AWS_S3_SIGNATURE_VERSION = secrets['AWS_S3_SIGNATURE_VERSION']
 
 # Auth
-ADMIN_USERNAME = 'admin'
-ADMIN_PASSWORD = 'pbkdf2_sha256$100000$bjl8bQRGI9Nm$zPBYIWVpI26QVKukz5awS1xNAtCEs9AyV7yfOlZ9F0w='
+ADMIN_USERNAME = 'jsm'
+ADMIN_PASSWORD = 'pbkdf2_sha256$100000$yezZOHABGmUb$sOiO/yFbVPJY3rPntMxxSxFrkYtD//RJ74SFU4GA2H8='
 AUTH_USER_MODEL = 'members.User'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    # 'members.backends.SettingsBackend',
+    'members.backends.SettingsBackend',
 ]
 
 

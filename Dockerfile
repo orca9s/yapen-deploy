@@ -1,5 +1,6 @@
-FROM            orca9s/fc-8th-eb-docker:base
+FROM            orca9sg/yapen-docker-deploy
 MAINTAINER      orca9sg@gmail.com
+
 # Production
 ENV             BUILD_MODE              production
 ENV             DJANGO_SETTINGS_MODULE  config.settings.${BUILD_MODE}

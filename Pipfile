@@ -16,6 +16,7 @@ pillow = "*"
 [dev-packages]
 awsebcli = "*"
 django-extensions = "*"
+ipython = "*"
 
 [requires]
 python_version = "3.6"
