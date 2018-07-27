@@ -25,7 +25,7 @@ DATABASES = secrets['DATABASES']
 
 # Media
 DEFAULT_FILE_STORAGE = 'config.storages.S3DefaultStorage'
-STATICFILES_STORAGE = 'config.storages.S3DefaultStorage'
+STATICFILES_STORAGE = 'config.storages.S3StaticStorage'
 
 AWS_STORAGE_BUCKET_NAME = secrets['AWS_STORAGE_BUCKET_NAME']
 
@@ -77,8 +77,6 @@ LOGGING = {
         }
     }
 }
-
-ALLOWED_HOSTS = []
 
 
 def is_ec2_linux():
